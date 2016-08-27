@@ -2,20 +2,52 @@
 
 <html>
     <head>
-        <title>Toncheff</title>
-        <link href="Main.css" rel="stylesheet" type="text/css" />
+        <title>Toncheff's project</title>
         <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script src="Main.js"></script>
+        <link href="Main.css" rel="stylesheet" type="text/css" />
+    
         
     </head>
 <body>
 
+    
 <header>
-<ul id="menu"> 
-<li><a href="#" >Home</a></li>
-<li><a href="#" >FAQ</a></li>
-<li><a href="#" >Members</a></li>
-    </ul> 
-</header>
-
+    
+    <!--Header,menu  progress , implement search option, remove register- maybe. add logo? css the buttons more - bigger, centered. -->
+   <ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#recent">Recent Posts</a></li>
+  <li><a href="#members">Members</a></li>
+       <li style="float:right"><a href="#login" id="loginbutton">Login</a></li>
+       
+</ul>
+ </header>
+    
+    
+    
+    
+        <!--Login page progress-->
+    
+    <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="Username"/>
+      <input type="password" placeholder="Password"/>
+          <input type="password2" placeholder="Repeat Password"/>
+      <button>Register</button>
+      <p class="message"><a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="Username"/>
+      <input type="password" placeholder="Password"/>
+      <button>login</button>
+      <p class="message"><a href="#">Not a member?</a></p>
+    </form>
+  </div>
+</div>
+        <!--Login page progress-->
+  
 </body>
 </html>
