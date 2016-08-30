@@ -20,9 +20,11 @@
   <li><a href="#news">News</a></li>
   <li><a href="#recent">Recent Posts</a></li>
   <li><a href="#members">Members</a></li>
-       <li style="float:right"><a href="#login" id="loginbutton">Login</a></li>
+       <li style="float:right"><a onclick="showLogin()" id="loginbutton">Login</a></li>
        
 </ul>
+    
+       
  </header>
     
     
@@ -30,20 +32,24 @@
     
         <!--Login page progress-->
     
-    <div class="login-page">
+    <div class="login-page" id="loginPage">
+    
   <div class="form">
+       
     <form class="register-form">
       <input type="text" placeholder="Username"/>
       <input type="password" placeholder="Password"/>
           <input type="password2" placeholder="Repeat Password"/>
       <button>Register</button>
       <p class="message"><a href="#">Sign In</a></p>
+                 <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">X</a></p>
     </form>
     <form class="login-form">
       <input type="text" placeholder="Username"/>
       <input type="password" placeholder="Password"/>
       <button>login</button>
       <p class="message"><a href="#">Not a member?</a></p>
+        <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">X</a></p>
     </form>
   </div>
 </div>

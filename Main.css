@@ -10,14 +10,19 @@ body {
     background-color: dimgrey;
 }
     
-    
-#loginbutton{
-    font-style: oblique;
-    font-weight:bolder;
+ .login-page {
+    display:none;
+}
    
+
+
+#loginbutton{
+    cursor: pointer;
+    font-style: oblique;
+    font-weight:bolder
  
 }
-}
+
 
 ul {
     list-style-type: none;
@@ -79,7 +84,7 @@ li a:hover {
   width: 100%;
   border: 0;
   margin: 0 0 15px;
-  padding: 15px;
+  padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
    /* font-style: italic;*/
@@ -88,11 +93,11 @@ li a:hover {
 
   text-transform: uppercase;
     font-weight: bolder;
-  outline: 3;
+  outline: 2;
   background: dimgrey;
   width: 100%;
   border: 0;
-  padding: 15px;
+  padding: 5px;
   color: #f0f0f5;
   font-size: 14px;
   
@@ -103,7 +108,8 @@ li a:hover {
   background: mediumseagreen;
 }
 .form .message {
-  margin: 20px 0 0;
+  margin: 10px 0 -5px;
+  /*  padding: 5px 0 0;*/
   font-size: 16px;
     font-style: italic;
 }
@@ -115,5 +121,10 @@ li a:hover {
   display: none;
 }
 
-
-
+.form .CloseLogin {
+     margin: 10px 0 -15px;
+  font-size: 16px;
+    color:dimgrey;
+     cursor: pointer;
+    font-weight:bolder
+}
