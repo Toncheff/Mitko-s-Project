@@ -17,10 +17,11 @@
     <!--Header,menu  progress , implement search option, remove register- maybe. add logo? css the buttons more - bigger, centered. -->
    <ul>
   <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#recent">Recent Posts</a></li>
-  <li><a href="#members">Members</a></li>
-       <li style="float:right"><a onclick="showLogin()" id="loginbutton">Login</a></li>
+
+  <li><a href="#recent">View Posts</a></li>
+  <li><a href="#postnow">Create Post</a></li>
+          <li style="float:right"><a  onclick="showLogout()" id="logoutbutton">LOGOUT</a></li>
+       <li style="float:right"><a onclick="showLogin()" id="loginbutton">LOGIN</a></li>
        
 </ul>
     
@@ -37,23 +38,30 @@
   <div class="form">
        
     <form class="register-form">
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="Password"/>
-          <input type="password2" placeholder="Repeat Password"/>
-      <button>Register</button>
+      <input type="text" id="registerUser" required ="true" placeholder="Username"/>
+      <input type="password" id="registerPass" required ="true" placeholder="Password"/>
+         <div><input type ="submit" value= "Register" /></div>
+      <!--<button>Register</button>-->
       <p class="message"><a href="#">Sign In</a></p>
-                 <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">X</a></p>
+                 <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">Close</a></p>
     </form>
     <form class="login-form">
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="Password"/>
-      <button>login</button>
+      <input type="text" id="loginUser" required ="true" placeholder="Username"/>
+      <input type="password" id="loginPass" required ="true" placeholder="Password"/>
+<!--      <button>login</button>-->
+        <div><input type ="submit" value = "Login" /></div>
       <p class="message"><a href="#">Not a member?</a></p>
-        <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">X</a></p>
+        <p class="CloseLogin"><a onclick="hideLogin()" id="closelogin">Close</a></p>
     </form>
   </div>
 </div>
         <!--Login page progress-->
+    
+  <!--  <div class="topics" id="Topics">
+        <div class="template">
+        </div>
+    </div>
+    -->
   
 </body>
 </html>

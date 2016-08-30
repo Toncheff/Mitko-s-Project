@@ -7,18 +7,33 @@ header{
 }
 
 body {
-    background-color: dimgrey;
+    background-color: #e6e6e6;
 }
     
  .login-page {
     display:none;
 }
    
+/*.topics {
+  width: auto;
+  padding: 8% 0 0;
+  margin: center;
+
+}
+.template {
+  
+  position:  absolute;
+  background: mediumseagreen;
+    margin: center;
+  width: 100%;
+  height: 100%;
+  left:0;
+}*/
 
 
 #loginbutton{
     cursor: pointer;
-    font-style: oblique;
+    
     font-weight:bolder
  
 }
@@ -29,15 +44,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-}
-li {
-    float: left;
-    border-right:1px solid dimgrey;
-}
-
-li:last-child {
-    border-right: none;
+    /*box-shadow: 8px 8px 4px grey*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 li {
@@ -45,16 +53,23 @@ li {
 }
 
 li a {
+    
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 12px 16px;
-    text-decoration:inherit;
-    font-weight:400;
+    text-decoration:none;
+    font-weight: bolder;
+   font-family: monospace;
+    font-size: 120%;
+    /*text-shadow: 2px 1px 1px grey;*/
+ 
 }
 
 li a:hover {
-    background-color: mediumseagreen;
+    color: mediumseagreen;
+     text-decoration-line: underline;
+    font-size: 100%;
 }
 
   <!--Login page progress-->
@@ -64,18 +79,19 @@ li a:hover {
   width: 220px;
   padding: 8% 0 0;
   margin: center;
+    
 }
 .form {
   
   position:  relative;
 
-  background: #333;
+  background: #e6e6e6;
   max-width: 220px;
-    top:50px;
+    top:150px;
   margin:auto;
   padding: 25px;
   text-align: center;
-
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .form input {
   
@@ -87,6 +103,7 @@ li a:hover {
   padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
+     box-shadow:inset 0 0 3px grey;
    /* font-style: italic;*/
 }
 .form button {
@@ -100,6 +117,8 @@ li a:hover {
   padding: 5px;
   color: #f0f0f5;
   font-size: 14px;
+      box-shadow:inset 0 0 3px white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
   cursor: pointer;
     
@@ -112,10 +131,20 @@ li a:hover {
   /*  padding: 5px 0 0;*/
   font-size: 16px;
     font-style: italic;
+
 }
 .form .message a {
   color: mediumseagreen;
   text-decoration: none;
+}
+.message:hover
+{
+  /*  text-decoration-line:line-through;*/
+    font-style:normal;
+    font-weight:bolder;
+   
+
+    
 }
 .form .register-form {
   display: none;
@@ -127,4 +156,11 @@ li a:hover {
     color:dimgrey;
      cursor: pointer;
     font-weight:bolder
+        
 }
+
+.CloseLogin:hover  {
+        text-decoration-line:underline;
+            
+    }
+
