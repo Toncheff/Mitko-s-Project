@@ -187,20 +187,28 @@ function loadPostsSuccess(posts){
     } else{
         
         
-        let postsTable = $('<table>')
+  /*      let postsTable = $('<table>')
         .append($('<ctr>').append(
         '<th>Title</th>',
-        '<th>Content</th>')
+        '<th>Description</th>')
         );
-        
+        */
         for (let post of posts) {
-            $('#seeRecent').append($('<tr>').append(
-            $('<td>').text(post.title),
-            $('<td>').text(post.description)),
-            $('<br>')
-            );
+            $('#seeRecent').append(
+            $('<h1>').text(post.title),
+            $('<h5>').text(post.description));
+        
+            
         }
-        $('#postss').append(postsTable);
+        
+             /*   for (let post of posts) {
+            $('#seeRecent').append($('').append(
+            $('<h1>').text(post.title),
+            $('<h2>').text(post.description))
+            
+            );
+        }*/
+     /*   $('#postss').append(postsTable);*/
     
 }
     
