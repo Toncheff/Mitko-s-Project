@@ -8,6 +8,8 @@ header{
 
 body {
     background-color: #e6e6e6;
+    
+    text-align:center;
 }
     
  .login-page {
@@ -194,7 +196,70 @@ li a:hover {
 #seeRecent{
      padding-top:250px;
      text-align: center;
-  
     font-size:250%;
     font-family: monospace;
 }
+
+#CreatePosts{
+    
+    width: 420px;
+  padding: 8% 40% 0;
+  margin: center;
+}
+
+#CreateNewPost{
+    position:relative;
+  background: #e6e6e6;
+  max-width: 420px;
+ margin:auto;
+  text-align: center;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form2 button {
+
+  text-transform: uppercase;
+    font-weight: bolder;
+  outline: 2;
+  background: dimgrey;
+  width: 100%;
+  border: 0;
+  padding: 5px;
+  color: #f0f0f5;
+  font-size: 14px;
+      box-shadow:inset 0 0 3px white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  cursor: pointer;
+    
+}
+.form2 button:hover,.form button:active,.form button:focus {
+  background: mediumseagreen;
+    color: dimgrey;
+    
+}
+
+#postcontent
+{
+      outline: 4;
+  background: white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+     border:1px solid dimgrey;
+}
+#titlepost{
+      outline: 4;
+  background: white;
+  width: 95%;
+  border: 0;
+  margin: 15px 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+     border:1px solid dimgrey;
+}
+

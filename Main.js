@@ -5,23 +5,24 @@
  });
 });
 
+
 function home2(){
       document.getElementById("seeHome").style.display="block";
       document.getElementById("seeRecent").style.display="none";
-     document.getElementById("seePost").style.display="none";
+     document.getElementById("CreatePosts").style.display="none";
     document.getElementById("loginPage").style.display="none";
 }
 function showLogin(){
       document.getElementById("seeHome").style.display="none";
       document.getElementById("seeRecent").style.display="none";
-     document.getElementById("seePost").style.display="none";
+     document.getElementById("CreatePosts").style.display="none";
     document.getElementById("loginPage").style.display="block";
 }
 
 function hideLogin(){
       document.getElementById("seeHome").style.display="block";
       document.getElementById("seeRecent").style.display="none";
-     document.getElementById("seePost").style.display="none";
+     document.getElementById("CreatePosts").style.display="none";
     document.getElementById("loginPage").style.display="none";
 }
 
@@ -29,10 +30,20 @@ function recentposts2(){
   
        document.getElementById("seeHome").style.display="none";
       document.getElementById("seeRecent").style.display="block";
-     document.getElementById("seePost").style.display="none";
+     document.getElementById("CreatePosts").style.display="none";
     document.getElementById("loginPage").style.display="none";
       
 }
+
+function postnow2(){
+  
+       document.getElementById("seeHome").style.display="none";
+      document.getElementById("seeRecent").style.display="none";
+     document.getElementById("CreatePosts").style.display="block";
+    document.getElementById("loginPage").style.display="none";
+      
+}
+
 
 
 const kinveyBaseUrl = "https://baas.kinvey.com/";
@@ -143,7 +154,7 @@ function register() {
     });
     
     function registerSuccess(response) {
-        let userAuth = response._kmd.authToken;
+        let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
         showHideMenuLinks();
         //showInfo('User registration successful.');
@@ -152,9 +163,77 @@ function register() {
     
 }
 
+function listPosts(){
+    $('#seeRecent').empty();
+    showView('seeRecent');
+    
+    const kinveypostssUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + "/postss";
+    const kinveyAuthHeaders = {
+        'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
+    
+    };
+    $.ajax({
+        method: "GET",
+        url: kinveypostssUrl,
+        headers: kinveyAuthHeaders,
+        success: loadPostsSuccess,
+        error: handleAjaxError
+    });
+}
+function loadPostsSuccess(posts){
+ 
+    if (posts.length == 0) {
+        $('#seeRecent').text('No posts available.')
+    } else{
+        
+        
+        let postsTable = $('<table>')
+        .append($('<ctr>').append(
+        '<th>Title</th>',
+        '<th>Content</th>')
+        );
+        
+        for (let post of posts) {
+            $('#seeRecent').append($('<tr>').append(
+            $('<td>').text(post.title),
+            $('<td>').text(post.description)),
+            $('<br>')
+            );
+        }
+        $('#postss').append(postsTable);
+    
+}
+    
+    
+            }
+function createPost(){
+            const kinveypostssUrl = kinveyBaseUrl + "appdata/" + kinveyAppKey + "/postss";
+            const kinveyAuthHeaders = {
+                'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
+            };
+            let postData = {
+                title: $('#titlepost').val(),
+                 description: $('#postcontent').val(),
+            };
+            
+            $.ajax({
+                method: "POST",
+                url: kinveypostssUrl,
+                headers: kinveyAuthHeaders,
+                data: postData,
+                success: createPostSuccess,
+                error: handleAjaxError
+            });
+            function createPostSuccess(response) {
+                listPosts();
+             
+            }
+        }
+                
 function logout() {
     sessionStorage.clear();
     showHideMenuLinks();
     showView('seeHome')
 
 }
+

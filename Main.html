@@ -17,7 +17,7 @@
     
   <ul>
         <li><a href="#home" onclick= "home2()" id="home">Home</a></li>
-        <li><a href="#recent" onclick= "recentposts2()" id ="recentposts">View Posts</a></li>
+        <li><a href="#recent" onclick= "listPosts()" id ="recentposts">View Posts</a></li>
         <li><a href="#postnow" onclick= "postnow2()" id ="postnow">Create Post</a></li>
         <li style="float:right"><a onclick="logout()" id="logoutbutton">LOGOUT</a></li>
         <li style="float:right"><a onclick="showLogin()" id="loginbutton">LOGIN</a></li>
@@ -27,17 +27,15 @@
     
    <main>
  <section class="HomePage" id="seeHome">
-    <h1>Welcoming text</h1>
-        Bit more of a welcoming text.
+    <h1>Welcome</h1>
+        "blog project"
  </section>
     
     <section class="RecentPost" id="seeRecent">
-    Recent posts, recent posts, recent posts, recent posts.
+    <div class="current" id="seeRecent"></div>
  </section>
     
-    <section class="NewPost" id="seePost">
-    Here are the new posts.
-    </section>
+    
        
     
     <section class="login-page" id="loginPage">
@@ -66,6 +64,21 @@
   </div>
 </section>
        
+       
+       <section id="CreatePosts">
+       <div class="form2">
+           <form id="CreateNewPost">
+               <!--<h1>Create your post.</h1>-->
+           <input type="text" id="titlepost" required="true"  placeholder="Blog Title"/>
+                 <div><textarea id="postcontent" rows="15" ></textarea></div>
+               
+                <div><a onclick="createPost()"><button>Create your post.</button></a></div>
+               
+             
+           
+           </form>
+             </div>
+       </section>
        </main>
         
       
