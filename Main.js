@@ -5,20 +5,43 @@
  });
 });
 
+function home2(){
+      document.getElementById("seeHome").style.display="block";
+      document.getElementById("seeRecent").style.display="none";
+     document.getElementById("seePost").style.display="none";
+    document.getElementById("loginPage").style.display="none";
+}
 function showLogin(){
+      document.getElementById("seeHome").style.display="none";
+      document.getElementById("seeRecent").style.display="none";
+     document.getElementById("seePost").style.display="none";
     document.getElementById("loginPage").style.display="block";
 }
 
 function hideLogin(){
+      document.getElementById("seeHome").style.display="block";
+      document.getElementById("seeRecent").style.display="none";
+     document.getElementById("seePost").style.display="none";
     document.getElementById("loginPage").style.display="none";
 }
 
+function recentposts2(){
+  
+       document.getElementById("seeHome").style.display="none";
+      document.getElementById("seeRecent").style.display="block";
+     document.getElementById("seePost").style.display="none";
+    document.getElementById("loginPage").style.display="none";
+      
+}
 
 
 const kinveyBaseUrl = "https://baas.kinvey.com/";
 const kinveyAppKey = "kid_B1Vekw7j";
 const kinveyAppSecret = "5e93a0efbede4706b676ffe92176eee7";
-
+$(function(){
+    showHideMenuLinks();
+    showView('seeHome')
+})
 function showView(viewName) {
     $('main > section').hide();
     $('#' + viewName).show();
@@ -26,7 +49,7 @@ function showView(viewName) {
 
 
 function showHideMenuLinks(){
-   $("#home").show();
+  
     if (sessionStorage.getItem('authToken') == null){
 
         $("#postnow").hide();
@@ -41,28 +64,27 @@ function showHideMenuLinks(){
     }
     }
 
-$(function(){
-    showHideMenuLinks();
-    showView('seeHome')
-})
 
-$("#home").click(showshowHome);
-$("#recent").click(showshowRecent);
-$("#postnow").click(showshowPost);
+
+/*$("#home").click(showHome);
+$("#recentposts").click(showRecent);
+$("#postnow").click(showPost);*/
 
 
 $('#login-form').submit(function(e) { e.preventDefault(); login();});
 $('#register-form').submit(function(e) { e.preventDefault(); register();});
+/*
 
-function showshowHome(){
+function showHome(){
     showView('seeHome');
 }
-function showshowRecent(){
-    showView('seeRecent');
+function showRecent(){
+    showView("seeRecent");
 }
-function showshowPost(){
+function showPost(){
     showView('seePost');
 }
+*/
 
 
 function login(){
@@ -83,6 +105,7 @@ function login(){
         error: handleAjaxError
     });
         function loginSuccess(response){
+            hideLogin()
         let userAuth = response._kmd.authtoken;
         sessionStorage.setItem('authToken', userAuth);
         showHideMenuLinks();
